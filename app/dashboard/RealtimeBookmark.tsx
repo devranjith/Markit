@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import type { RealtimePostgresChangesPayload } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase";
+import type { Bookmark } from "./ClientDashboard";
 
 interface RealtimeBookmarksProps {
-  onChange: (payload: any) => void;
+  onChange: (payload: RealtimePostgresChangesPayload<Bookmark>) => void;
 }
 export default function RealtimeBookmarks({
   onChange,
@@ -41,7 +43,7 @@ export default function RealtimeBookmarks({
           schema: "public",
           table: "bookmarks",
         },
-        (payload) => {
+        (payload: RealtimePostgresChangesPayload<Bookmark>) => {
           // Explicitly handle all event types including INSERT, UPDATE, DELETE
           console.log("🔔 Realtime event received:", payload.eventType, payload);
           // Always refresh on any change
