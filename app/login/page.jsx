@@ -18,18 +18,18 @@ const page = () => {
   };
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 overflow-hidden">
+    <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 overflow-hidden px-4 py-8 sm:px-6">
       {/* Ambient blobs */}
-      <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-500 rounded-full opacity-20 blur-3xl" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-500 rounded-full opacity-20 blur-3xl" />
-      <div className="absolute top-[40%] left-[60%] w-64 h-64 bg-pink-500 rounded-full opacity-10 blur-3xl" />
+      <div className="absolute top-[-10%] left-[-10%] w-48 h-48 sm:w-96 sm:h-96 bg-purple-500 rounded-full opacity-20 blur-3xl" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-48 h-48 sm:w-96 sm:h-96 bg-blue-500 rounded-full opacity-20 blur-3xl" />
+      <div className="absolute top-[40%] left-[60%] w-32 h-32 sm:w-64 sm:h-64 bg-pink-500 rounded-full opacity-10 blur-3xl" />
 
       {/* Glass Card */}
-      <div className="relative z-10 flex flex-col items-center gap-8 px-12 py-14 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl w-full max-w-md">
+      <div className="relative z-10 flex flex-col items-center gap-6 sm:gap-8 px-6 py-10 sm:px-12 sm:py-14 rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl shadow-2xl w-full max-w-sm sm:max-w-md">
         {/* Logo / Icon */}
-        <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 border border-white/20 shadow-inner">
+        <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-white/10 border border-white/20 shadow-inner">
           <svg
-            className="w-8 h-8 text-white"
+            className="w-6 h-6 sm:w-8 sm:h-8 text-white"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -45,10 +45,10 @@ const page = () => {
 
         {/* Heading */}
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold text-white tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             Smart Bookmarks
           </h1>
-          <p className="text-sm text-white/40">
+          <p className="text-xs sm:text-sm text-white/40">
             Save and organize your links, beautifully.
           </p>
         </div>
@@ -59,10 +59,10 @@ const page = () => {
         {/* Google Button */}
         <button
           onClick={handleGoogleLogin}
-          className="group flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 hover:border-white/25 text-white text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-white/10 cursor-pointer"
+          className="group flex items-center justify-center gap-3 w-full px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 hover:border-white/25 text-white text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-white/10 cursor-pointer active:scale-95"
         >
           {/* Google Icon */}
-          <svg className="w-5 h-5" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
             <path
               fill="#EA4335"
               d="M5.27 9.76A7.08 7.08 0 0 1 19.07 12c0 .68-.06 1.34-.18 1.98H12v-3.73h7.44A7.1 7.1 0 0 0 5.27 9.76z"
@@ -82,7 +82,7 @@ const page = () => {
           </svg>
           Continue with Google
           <svg
-            className="w-4 h-4 text-white/30 group-hover:text-white/60 group-hover:translate-x-0.5 transition-all duration-300"
+            className="w-4 h-4 text-white/30 group-hover:text-white/60 group-hover:translate-x-0.5 transition-all duration-300 flex-shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -97,7 +97,7 @@ const page = () => {
         </button>
 
         {/* Footer note */}
-        <p className="text-xs text-white/25 text-center">
+        <p className="text-xs text-white/25 text-center leading-relaxed">
           By continuing, you agree to our{" "}
           <span className="underline underline-offset-2 cursor-pointer hover:text-white/50 transition-colors">
             Terms

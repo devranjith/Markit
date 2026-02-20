@@ -44,14 +44,17 @@ export default function AddBookmark({ onBookmarkAdded }: AddBookmarkProps) {
   return (
     <form
       onSubmit={addBookmark}
-      className="flex gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
+      className="flex flex-col md:flex-row gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
     >
       <input
         type="text"
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="flex-1 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm placeholder-white/20 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-200"
+        className="w-full md:flex-1 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 
+               text-white text-sm placeholder-white/20 
+               focus:outline-none focus:border-purple-500/50 focus:bg-white/10 
+               transition-all duration-200"
       />
 
       <input
@@ -59,12 +62,20 @@ export default function AddBookmark({ onBookmarkAdded }: AddBookmarkProps) {
         placeholder="https://example.com"
         value={url}
         onChange={(e) => setUrl(e.target.value)}
-        className="flex-[2] px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm placeholder-white/20 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-200"
+        className="w-full md:flex-[2] px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 
+               text-white text-sm placeholder-white/20 
+               focus:outline-none focus:border-purple-500/50 focus:bg-white/10 
+               transition-all duration-200"
       />
 
       <button
         disabled={isSubmitting}
-        className="flex cursor-pointer items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600/80 hover:bg-purple-600 border border-purple-500/30 hover:border-purple-400/50 text-white text-sm font-medium disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 shadow-lg shadow-purple-900/30"
+        className="w-full md:w-auto flex items-center justify-center gap-2 
+               px-5 py-2.5 rounded-xl bg-purple-600/80 hover:bg-purple-600 
+               border border-purple-500/30 hover:border-purple-400/50 
+               text-white text-sm font-medium 
+               disabled:opacity-40 disabled:cursor-not-allowed 
+               transition-all duration-200 shadow-lg shadow-purple-900/30"
       >
         {isSubmitting ? (
           <>
